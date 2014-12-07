@@ -1,0 +1,29 @@
+@CHARSET "UTF-8";
+ul.tabs{
+    margin: 0 auto;
+    padding: 0;
+    list-style: none;
+    height: 20px;
+    border-left: 1px solid #999;
+    width: 100%;
+    margin: 20px auto;
+}
+ul.tabs li {
+    float: left;
+    margin: 0;
+    padding: 0;
+    height: 28px;
+    line-height: 31px;
+    border: 1px solid #999;
+    border-left: none;
+    margin-bottom: -1px;
+    overflow: hidden;
+    position: relative;
+    background: #e0e0e0;
+    width:150px;
+    text-align: center;
+}
+ul.tabs li.active, html ul.tabs li.active a:hover {
+    background: #fff;
+    border-bottom: 1px solid #fff;
+}

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    	   xmlns:context="http://www.springframework.org/schema/context"
+    	   xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+       	http://www.springframework.org/schema/beans 
+       	http://www.springframework.org/schema/beans/spring-beans.xsd
+       	http://www.springframework.org/schema/context
+       	http://www.springframework.org/schema/context/spring-context.xsd
+       	http://www.springframework.org/schema/mvc
+       	http://www.springframework.org/schema/mvc/spring-mvc.xsd">
+
+    <context:component-scan base-package="org.cms.web.controller"/>
+    
+   
+	<import resource="mappings.xml"/>
+	<import resource="config/credit/credit.xml"/>
+	<import resource="config/customer/customer.xml"/>
+	<import resource="config/deadline/deadline.xml"/>
+	<import resource="config/delivery/delivery.xml"/>
+	<import resource="config/home/home.xml"/>
+	<import resource="config/inventory/inventory.xml"/>
+	<import resource="config/manager/manager.xml"/>
+	<import resource="config/manager/auth/auth.xml"/>
+	<import resource="config/manager/auth/employee.xml"/>
+	<import resource="config/manager/auth/shop.xml"/>
+	<import resource="config/manager/b2b/b2b.xml"/>
+	<import resource="config/manager/m_policy/m_policy.xml"/>
+	<import resource="config/manager/product/product.xml"/>
+	<import resource="config/manager/product/tariff.xml"/>
+	<import resource="config/policy/policy.xml"/>
+	<import resource="config/policy/commission/commission.xml"/>
+	<import resource="config/policy/deduction/deduction.xml"/>
+	<import resource="config/policy/rebate/rebate.xml"/>
+	<import resource="config/receipt/receipt.xml"/>
+	<import resource="config/test/test.xml"/>
+	
+  <bean id="simpleUrlMapping" class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+	<property name="mappings">
+		<props>
+			
+			<prop key="/credit/main.do">credit_main_controller</prop><!-- credit : 신용조회-->
+			<prop key="/credit/add.do">credit_add_controller</prop>
+			
+			<prop key="/customer/main.do">customer_main_controller</prop><!-- customer : 고객관리-->
+			<prop key="/customer/add.do">customer_add_controller</prop>
+			
+			<prop key="/deadline/main.do">deadline_main_controller</prop><!-- deadline : 마감관리-->
+		
+			<prop key="/delivery/main.do">delivery_main_controller</prop><!-- delivery : 배송관리-->
+			<prop key="/home/main.do">home_main_controller</prop><!-- home : 메인페이지 -->
+			<prop key="/inventory/main.do">inventory_main_controller</prop><!-- inventory : 재고관리 -->
+			<prop key="/manager/main.do">manager_main_controller</prop><!-- manager : 관리자모드 -->
+				<prop key="/auth/main.do">auth_main_controller</prop><!-- auth : 관리자모드 > 권한관리-->
+				<prop key="/employee/main.do">employee_main_controller</prop><!-- employee : 관리자모드 > 권한관리 > 사원 -->
+				<prop key="/shop/main.do">shop_main_controller</prop><!-- employee : 관리자모드 > 권한관리 > 총판-->
+				<prop key="/b2b/main.do">b2b_main_controller</prop><!-- b2b : 관리자모드 > b2b관리-->
+				<prop key="/product/main.do">product_main_controller</prop><!-- product : 관리자모드 > 상품관리-->
+				<prop key="/m_policy/main.do">m_policy_main_controller</prop><!-- m_policy : 관리자모드 > 정책관리-->
+			
+			
+			<prop key="/policy/main.do">policy_main_controller</prop><!-- policy : 정책 ※ 정책관리와 다름 -->
+			<prop key="/receipt/main.do">receipt_main_controller</prop><!-- receipt : 수납관리 -->
+			
+			
+			<prop key="/tariff/main.do">tariff_main_controller</prop><!--관리자 > 상품 > 요금제 -->
+			<prop key="/tariff/add.do">tariff_add_controller</prop>
+			
+			<prop key="/test/main.do">test_main_controller</prop><!-- test : 테스트 -->
+		</props>
+	</property>
+</bean>	
+ 
+	
+	
+	
+	
+</beans>
